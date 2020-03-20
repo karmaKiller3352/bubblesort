@@ -1,9 +1,11 @@
 export default class Sorting{
+    // конструктор принимает значения для задания параметров коллекции
     constructor (collectionSize, sortSpeed, maxNum) {
         this.collectionSize = collectionSize;
         this.sortSpeed = sortSpeed;
         this.maxNum = maxNum;
     }
+    // геттеры, сеттеры добавлены, исключительно, для возможности расширения интерфейса
     setCollectionSize (size) {
         this.collectionSize = size;
     }
@@ -22,6 +24,7 @@ export default class Sorting{
     getMaxNum () {
         return this.maxNum;
     }
+    // создание набора на основе заданных в конструкторе параметров
     makeCollection () {
         const collection = [];
         const randNumber = (size) => Math.round(Math.random() * size);
@@ -33,6 +36,7 @@ export default class Sorting{
         }
         this.collection = collection;
     }
+    // отрисовка переданной коллекции, принимает в параметры коллекцию и селектор в документе
     render (collection, selector) {
         const wrap = document.querySelector(selector);
         const html = collection.reduce(
@@ -40,6 +44,7 @@ export default class Sorting{
         )
         wrap.innerHTML = html;
     }
+    // рекусрсивный процесс прохода по коллекции для сортировки, исключительно, для внутреннего использования
     iterate (i, arr, size) {
         if (i !== (size - 1)) {
             arr[i].property = 'darkgreen';
@@ -67,6 +72,7 @@ export default class Sorting{
             }, this.sortSpeed/arr.length)
         }
     }
+    // метод сортировки, так же итеративный
     sortCollection (size, count = 0) {
         if (count === this.collectionSize) return;
         this.iterate(0, this.collection, size);
