@@ -1,4 +1,4 @@
-import Sorting from './common.js';
+import Sorting from './Sorting.js';
 
 const collectionSize = 120; // количество элементов в коллекции
 const sortSpeed = 500; // скорость сортировки
