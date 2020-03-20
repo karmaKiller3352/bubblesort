@@ -1,9 +1,8 @@
 # bubblesort
 bubble sort visualization
 
-https://github.com/karmaKiller3352/bubblesort.git
-
-Клонировать репозиторий 
+Через bash
+1) git clone https://github.com/karmaKiller3352/bubblesort.git
 1) npm install
 2) npm run start
 
