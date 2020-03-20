@@ -1,7 +1,7 @@
 let collection;
-const collectionSize = 150;
-const sortSpeed = 500;
-const maxNum = 100;
+const collectionSize = 20;
+const sortSpeed = 1000;
+const maxNum = 150;
 
 
 const makeCollection = (numSize, collectionSize) => {
@@ -22,7 +22,7 @@ const render = (collection, selector) => {
         (acc, { number, property}) => `${acc}<span style = "height:${number}px;" class = "${property}"></span>`, "",
     )
     wrap.innerHTML = html;
-    document.getElementById('generate').setAttribute('disabled', 'disabled')
+    document.getElementById('generate').setAttribute('disabled', 'disabled');
 }
 
 const generateCollection = () => {
@@ -52,7 +52,8 @@ const iterate = (i, arr, size) => {
 
         }
         setTimeout(() => {
-            iterate(++i, arr, size);
+            i += 1;
+            iterate(i, arr, size);
         }, sortSpeed/arr.length)
     }
    
@@ -62,7 +63,9 @@ const sortCollection = (count, size) => {
     if (count !== collectionSize) {
         iterate(0, collection, size);
         setTimeout(() => {
-            sortCollection(++count, --size);
+            count += 1;
+            size -= 1;
+            sortCollection(count, size);
         }, sortSpeed)
     }
 }
