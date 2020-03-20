@@ -1,2 +1,2 @@
 run:
-	npx node src/common.js
+	npx node src/index.js

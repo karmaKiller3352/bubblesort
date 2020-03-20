@@ -1,5 +1,5 @@
 let collection;
-const collectionSize = 50;
+const collectionSize = 150;
 const sortSpeed = 500;
 const maxNum = 100;
 
@@ -22,6 +22,7 @@ const render = (collection, selector) => {
         (acc, { number, property}) => `${acc}<span style = "height:${number}px;" class = "${property}"></span>`, "",
     )
     wrap.innerHTML = html;
+    document.getElementById('generate').setAttribute('disabled', 'disabled')
 }
 
 const generateCollection = () => {
