@@ -75,5 +75,5 @@ export default class Sorting{
             size -= 1;
             this.sortCollection(size, count);
         }, this.sortSpeed);  
-    }
+    }  
 }
