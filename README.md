@@ -6,6 +6,8 @@ bubble sort visualization
 1) npm install
 2) npm run start
 
-Иначе скачать дистрибутив и запустить файл /dist/index.html
+Иначе
+1) скачать дистрибутив 
+2) запустить файл /dist/index.html
 
 
